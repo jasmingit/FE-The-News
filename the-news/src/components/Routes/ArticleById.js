@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import fetchArticleById from '../API/GetArticlesById';
+import Vote from '../Vote';
 
 export default function ArticleById() {
     const [articleWithId, setArticleWithId] = useState([])
@@ -11,8 +12,7 @@ export default function ArticleById() {
             setArticleWithId(article)
         })
     }, [article_id])
-   const date = articleWithId['created_at']
-console.log(articleWithId)
+
     return (
         <div className="single-article">
             <h2 className="topic-head">{articleWithId.title}</h2>
@@ -21,6 +21,7 @@ console.log(articleWithId)
             <h4 className="topic-name">{articleWithId.topic}</h4>
             </section>
             <p>{articleWithId.body}</p>
+            <Vote votes={articleWithId.votes}/>
         </div>
     )
 
