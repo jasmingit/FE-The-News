@@ -14,7 +14,6 @@ export default function ArticleList() {
     return (
         <section className="article-card-list">
             {articles.map((article) => {
-                console.log(article)
                 return (
                     <article className="article-card" key={article.article_id}>
                         <h2>{article.title}</h2>
