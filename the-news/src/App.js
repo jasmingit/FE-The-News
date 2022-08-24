@@ -1,12 +1,10 @@
 import './App.css';
 import Home from './components/Routes/Home'
 import Header from './components/Header'
-import TopicCooking from './components/Routes/TopicCooking';
-import TopicCoding from './components/Routes/TopicCoding';
-import TopicFootball from './components/Routes/TopicFootball';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import TopicsList from './components/TopicsList'
+import TopicsList from './components/Routes/TopicsList'
 import NavBar from './components/NavBar';
+import ArticleByTopic from './components/Routes/ArticleByTopic';
 
 
 function App() {
@@ -18,9 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/topics' element={<TopicsList />}/>
-          <Route path='/topics/cooking' element={<TopicCooking />}/>
-          <Route path='/topics/coding' element={<TopicCoding />}/>
-          <Route path='/topics/football' element={<TopicFootball />}/>
+          <Route path='/topics/:topic' element={<ArticleByTopic />}/>
         </Routes>
       </div>
     </BrowserRouter>
