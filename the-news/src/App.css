@@ -23,9 +23,7 @@ Header{
     margin: 3em;
     padding: 2em;
   }
-  /* .article-card {
-  
-  } */
+
   .author-name{
     align-items: center;
     justify-content: center;
@@ -112,6 +110,29 @@ Header{
     opacity: 1;
     padding: 0em;
     transition: all 1s;
+  }
+  .topic-head {
+    font-size: 38pt;
+    color: white;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 1.5em;
+    padding: 10px;
+    background-color: black;
+    border: solid 1px black;
+    border-radius: 0% 20px 20px 20px;
+    width: fit-content;
+  }
+  .single-article{
+    margin:10em
+  }
+  .article-info {
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction: row;
+    align-items: center;
   }
 
 }

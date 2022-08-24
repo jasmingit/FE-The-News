@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import {fetchArticleByTopic} from '../API/GetArticleByTopic'
+import ArticleById from './ArticleById';
 
 export default function ArticleByTopic() {
 
@@ -12,19 +13,22 @@ export default function ArticleByTopic() {
         })
     }, [topic])
 
+
+
     return (
-        <>
-         <h4 className="topic-name">{topicArticles[0]['topic']}</h4>
+        <div>
+            <h4 className='topic-head'>{topic}</h4>
         <section className="article-card-list">
             {topicArticles.map((article) => {
                 return (
                     <article className="article-card" key={article.article_id}>
-                        <h2>{article.title}</h2>
+                        <Link onClick={<ArticleById article_id={article.article_id}/>} className="article-head-link" style={{color: 'black'}}to={`/articles/${article.article_id}`}><h2>{article.title}</h2></Link>
                         <p className="author-name">@{article.author}</p>
                     </article>
                 )
             })}
         </section>
-        </>
+        </div>
     )
+    // onClick={<ArticleById article_id={article.article_id}/>}
 }
