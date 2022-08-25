@@ -2,17 +2,11 @@ import { useState} from 'react';
 import {FiThumbsUp, FiThumbsDown} from 'react-icons/fi';
 import { patchArticleVote } from './API/PatchVotes';
 
-export default function Vote({votes, article_id}) {
-    // console.log(votes)
-    const [addedVote, setAddedVote] = useState(0)
-    console.log(votes, article_id)
 
-    // useEffect(() => {
-    //     patchArticleVote(article_id, ).then((voteCount) => {
-    //         setVoteNum(voteCount)
-    //     })
-    // }, [article_id, voteNum])
-    
+export default function Vote({votes, article_id}) {
+
+    const [addedVote, setAddedVote] = useState(0)
+
     const incVote = () => {
         setAddedVote((currVote) => {
             return currVote + 1})
@@ -36,11 +30,6 @@ export default function Vote({votes, article_id}) {
         
     }
 
-
-        
-    // const decVote = () => {
-    //     return setVoteNum(-1)
-    // }
     return (
         <section className="article-vote ">
             <h4>{votes + addedVote} votes</h4>
