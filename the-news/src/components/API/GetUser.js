@@ -1,4 +1,3 @@
-// /api/users/:username
 import axios from 'axios';
 
 export default function fetchUser(username){
