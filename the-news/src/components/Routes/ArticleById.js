@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import fetchArticleById from '../API/GetArticlesById';
 import Vote from '../Vote';
 import Comments from '../Comments'
+import UserInput from '../UserInput';
 
 export default function ArticleById() {
     const [articleWithId, setArticleWithId] = useState([])
@@ -25,6 +26,7 @@ export default function ArticleById() {
             <p>{articleWithId.body}</p>
             <Vote votes={votes} article_id={article_id}/>
             <Comments article_id={article_id}/>
+            <UserInput article_id={article_id}/>
         </div>
     )
 
