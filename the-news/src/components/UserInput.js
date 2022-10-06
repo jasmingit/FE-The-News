@@ -46,7 +46,6 @@ export default function UserInput({article_id}) {
                     {usernameList.map((user) => {
                         
                         return (
-                            
                             <option value={user.username}>{user.username}</option>
                         )
                     })}
@@ -66,7 +65,7 @@ export default function UserInput({article_id}) {
                 required
                 /> 
                 <button id="comment-button">Submit</button>
-           
+
             </form>
         </div>
     )

@@ -6,4 +6,4 @@ export const fetchArticleByTopic = (topic) => {
     .then(({data}) => {
         return data.articles
     });
-}
+};
