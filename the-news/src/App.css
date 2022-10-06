@@ -159,4 +159,22 @@ Header{
     margin: 1em;
     padding: 1em;
   }
+  .sortby {
+    margin: 2em;
+    margin-left: 5em;
+  }
+  .sortby-label {
+      color:grey;
+      font-size: 10pt;
+  }
+  .sortby-select {
+      color:black;
+      font-size: 10pt;
+      background-color: white;
+      border: grey 1px solid;
+      border-radius: 20px 20px 20px 20px;
+      margin-left: 5px;
+      padding:2px;
+      width:min-content;
+  }
 }
