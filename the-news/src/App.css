@@ -177,4 +177,7 @@ Header{
       padding:2px;
       width:min-content;
   }
+  .msg {
+    color: white;
+  }
 }

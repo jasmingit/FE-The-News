@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import fetchCommentsById from "./API/GetComments";
+import fetchCommentsById from "./API/GetCommentsById";
 
 export default function Comments(article_id) {
 

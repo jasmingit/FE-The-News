@@ -1,57 +1,32 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import PostCommentsById from "./API/PostComment"
-import fetchAllUsers from "./API/GetAllUsers"
+// import fetchAllUsers from "./API/GetAllUsers"
+import { UserContext } from "../contexts/UserContext";
+import { useContext } from "react";
 
 
 export default function UserInput({article_id}) {
 
     const [body, setBody] = useState("");
-    const [usernameList, setUsernameList] = useState([])
-    const [author, setAuthor] = useState("")
-
-    function handleUserChange(event) {
-       setAuthor(event.target.value)
-    };
-
-    useEffect(() => {
-        fetchAllUsers().then((users) => {
-            setUsernameList(users) 
-        })
-        .catch((err)=> {
-            console.log(err)
-        })
-    }, [])
-   
+    
+    const {user} = useContext(UserContext)
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        PostCommentsById(article_id, body, author)
+        PostCommentsById(article_id, body, user)
         .catch((err) => {
             console.log(err.status);
         });
     }
 
-
+console.log(user)
 
     return (
         <div className="add-comment" >
             <h4 className="comment-title" >Add your comment</h4>
-            
+            <p>{user}</p>    
             <form className="comment-form" onSubmit={handleSubmit}>
-                
-                <div className="user-list">
-                <select id="usernames" onChange={handleUserChange} required>
-                    <option value="" selected disabled hidden>Author</option>
-                    {usernameList.map((user) => {
-                        
-                        return (
-                            <option value={user.username}>{user.username}</option>
-                        )
-                    })}
-                </select>
-                </div>
-
                 <textarea
                 id="comment-input"
                 name="comment-input"
